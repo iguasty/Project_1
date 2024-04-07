@@ -18,4 +18,7 @@ DESIGN:     -Display user has entered program
             -If Display Attributes selected, use method to display attributes
             -If Quit selected, say goodbye and exit program
 
-KNOWN BUGS:  
+KNOWN BUGS: -Error handling issues: Setting 'ability' attribute to bad value causes program to go back to main menu
+                                    Setting 'arms' and 'legs' attributes to bad values causes program to crash
+            
+            -Misc issues:           XP value resets to 0 when new attributes are set to object
