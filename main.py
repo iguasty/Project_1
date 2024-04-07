@@ -49,19 +49,14 @@ class Creature:
                 f"{self.leg_count} {self.leg_units}\n" \
                 f"Ability: {self.ability_set(self.ability)}"
                
-
- #   def edit_attributes(self, type, name, arm_count, leg_count, ability_num):
- #       """Edit creatures attributes"""
- #       return my_creature(type, name, arm_count, leg_count, ability_num)
-
-
 # main
 # start program by asking name
 
 os.system('cls') # clears terminal screen 
+
 print("Welcome to the Creature Creator! What is your name?")
-user_name = input("My name is:\n-> ")
-os.system('cls') # clears terminal screen 
+user_name = input("My name is:\n-> ") 
+os.system('cls') 
 print(f"Hello {user_name}! Time to create your creature.")
 
 # create object instance and ask user input for attribute values
@@ -73,22 +68,24 @@ my_creature = Creature(input("What is the creatures type? (Ex. unicorn)\n-> "),
                        )
 
 
-os.system('cls') # clears terminal screen 
+os.system('cls')
 
+# enter while loop for menu
 loop_program = True
 while loop_program:
     print( "Main Menu:\n\n1. Display Attributes\n2. Edit Attributes\n3. Upgrade XP Level\n4. Exit program")
     
-    
-    select = int(input("\nEnter selection -> "))
+    select = int(input("\nEnter selection -> ")) # user selects menu item
     
     if(select != 1 or 2 or 3 or 4):
+        # match case for selecting menu item
         match select:
             case 1:
                 os.system('cls') # clears terminal screen
                 print(f"Here are your creatures attributes:\n\n{my_creature.display_attributes()}\n") # calls method from class Creature to display objects attributes
             case 2:
-                os.system('cls') # clears terminal screen
+                os.system('cls')
+                # sets new values to objects attributes
                 my_creature.__init__(input("Set creature type\n-> "),
                                             input("Set creature name\n-> "),
                                             int(input("Set arm amount\n-> ")),
@@ -96,14 +93,14 @@ while loop_program:
                                             int(input("Set ability. Choose 1,2, or 3\n 1. Flight\n 2. Invisibility\n 3. Fire resistance\n-> "))
                                             )
             case 3:
-                os.system('cls') # clears terminal screen
+                os.system('cls') 
                 print(f"XP increased to {my_creature.upgrade()}!\n")
             case 4:
-                os.system('cls') # clears terminal screen
+                os.system('cls') 
                 print("Goodbye!")
-                loop_program = False
+                loop_program = False  # exits program
             case _:
-                os.system('cls') # clears terminal screen
-                print("That is not a valid option. Try again.")
+                os.system('cls') 
+                print("That is not a valid option. Try again.") # returns to main menu
                 
                 
