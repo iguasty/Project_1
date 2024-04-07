@@ -1,0 +1,21 @@
+**DOCUMENT FOR DOCUMENTING OBJECTIVE, DESIGN, AND BUGS**
+
+
+OBJECTIVE:  -Create a class for a complex object and that has multiple attributes (variables and methods).
+            -Create a looping menu for user to interact with the object's attributes (ask for inputs, display outputs)
+
+DESIGN:     -Display user has entered program
+            -Ask for name
+            -Explain object (mythical creature)
+            -Explain creatures XP Level
+            -Ask and assign creature's type (example: unicorn)
+            -Ask and assign creature's name
+            -Ask and assign creature's arm count
+            -Ask and assign creature's leg count
+            -Ask and assign special ability from list
+            -Menu items (Upgrade XP, Display Attributes, Quit)
+            -If Upgrade XP selected, use method to upgrade XP level
+            -If Display Attributes selected, use method to display attributes
+            -If Quit selected, say goodbye and exit program
+
+KNOWN BUGS:  
