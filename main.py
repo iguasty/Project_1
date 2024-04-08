@@ -37,7 +37,8 @@ class Creature:
             case 3:
                 return "Fire resistance"
             case _:
-                return "That is not 1,2 or 3"
+                return "Not set"
+                    
         
 
     def display_attributes(self):
@@ -76,31 +77,29 @@ while loop_program:
     print( "Main Menu:\n\n1. Display Attributes\n2. Edit Attributes\n3. Upgrade XP Level\n4. Exit program")
     
     select = int(input("\nEnter selection -> ")) # user selects menu item
-    
-    if(select != 1 or 2 or 3 or 4):
-        # match case for selecting menu item
-        match select:
-            case 1:
-                os.system('cls') # clears terminal screen
-                print(f"Here are your creatures attributes:\n\n{my_creature.display_attributes()}\n") # calls method from class Creature to display objects attributes
-            case 2:
-                os.system('cls')
-                # sets new values to objects attributes
-                my_creature.__init__(input("Set creature type\n-> "),
-                                            input("Set creature name\n-> "),
-                                            int(input("Set arm amount\n-> ")),
-                                            int(input("Set leg amount\n-> ")),
-                                            int(input("Set ability. Choose 1,2, or 3\n 1. Flight\n 2. Invisibility\n 3. Fire resistance\n-> "))
-                                            )
-            case 3:
-                os.system('cls') 
-                print(f"XP increased to {my_creature.upgrade()}!\n")
-            case 4:
-                os.system('cls') 
-                print("Goodbye!")
-                loop_program = False  # exits program
-            case _:
-                os.system('cls') 
-                print("That is not a valid option. Try again.") # returns to main menu
-                
-                
+
+    # match case for selecting menu item
+    match select:
+        case 1:
+            os.system('cls') # clears terminal screen
+            print(f"Here are your creatures attributes:\n\n{my_creature.display_attributes()}\n") # calls method from class Creature to display objects attributes
+        case 2:
+            os.system('cls')
+            # sets new values to objects attributes
+            my_creature.__init__(input("Set creature type\n-> "),
+                                        input("Set creature name\n-> "),
+                                        int(input("Set arm amount\n-> ")),
+                                        int(input("Set leg amount\n-> ")),
+                                        int(input("Set ability. Choose 1,2, or 3\n 1. Flight\n 2. Invisibility\n 3. Fire resistance\n-> "))
+                                        )
+        case 3:
+            os.system('cls') 
+            print(f"XP increased to {my_creature.upgrade()}!\n")
+        case 4:
+            os.system('cls') 
+            print("Goodbye!")
+            loop_program = False  # exits program
+        case _:
+            os.system('cls') 
+            print("That is not a valid option. Try again.") # returns to main menu
+            
