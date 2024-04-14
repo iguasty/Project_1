@@ -1,0 +1,43 @@
+
+**Reflection Questions for Project 1**
+
+I used ChatGPT as my classmate when discussing these questions. Here was my prompt to get valid, realistic outputs:
+
+"You are my classmate in my CS162 Python class. Give your input as if you were a classmate talking to me in a discussion about these questions: how do you think you
+would add file reading and writing functionality to your first week's project in this class,
+how do you think the try and except clauses of Python work (based on your current understanding or a quick Internet search) and what the FileNotFoundError class is,
+identify sections of your code that you could use to create functions or methods out of,
+design tests that would show your program working correctly (positive tests and negative tests). Use my program that I will provide to help your discussion with me.
+Make your responses realistic, you are my classmate, not an expert."
+
+**Note: I had to do a follow up prompt because the output from the previous prompt gave me a lot of information and code snippets which is unlikely from a classmate. 
+I will however probably utilize some of the suggestions it gave. However my follow up prompt gave a more realistic output from a classmate.
+Here was the follow up prompt: "Ok discuss the same questions with me except be more like a classmate and dont provide direct code snippets"
+
+
+1. How do you think you would add file reading and writing functionality to your first week's project in this class?
+
+    After discussing with my classmate, we both came to the conclusion that adding a file save function to the creature class for saving a creatures attributes would be beneficial.
+    I could add this feature so that the user could make multiple creature profiles and load, read, and edit them from the main menu in the program. This also technically
+    would allow a user to import a creature file without the use of the program as long as the file is formatted correctly.
+
+2. How do you think the try and except clauses of Python work (based on your current understanding or a quick Internet search) and what the FileNotFoundError class is?
+
+    Based on my current understanding and discussion with my classmate (who also happens to be a research source) the 'try' and 'except' clause is used for error handling.
+    Its purpose is to try something and then if it fails for a specific reason it will throw an error and does something else instead of crashing. It can be set up to run specific
+    code for specific error cases and/or it can be used as a general error catcher that will catch any error thrown. The FileNotFoundError is a specific error to fileio use cases. 
+    It is thrown when the program tries to open a file that does not exist or is not found in the directory being looked at.
+
+3. Identify sections of your code that you could use to create functions or methods out of.
+
+    My classmate gave good suggestions on good ways to refactor my code to be cleaner and easier to fix bugs. One of those suggestions was to have the menu be a function instead of it 
+    being the main loop. I suggested that the fileio that I will add should also be a function.
+
+4. Design tests that would show your program working correctly (positive tests and negative tests).
+
+    For the design tests I will run a test file that covers cases that should work correctly and output the expected results as well as the actual results.
+    I will also run a test file that covers cases that would cause errors in the program and see if the program can handle them and then output the resuslts.
+    My classmate suggested using a python module called 'unittest' to automate these tests for me, however for this project I will use my own test methods. Maybe next project I'll try it.
+
+
+
