@@ -107,4 +107,28 @@ class Creature:
                 f"{self.arm_count} {self.arm_units}\n" \
                 f"{self.leg_count} {self.leg_units}\n" \
                 f"Ability: {self.ability_set(self.ability)}"
-                
+    
+    def write(self) -> None:
+        output_file = open(self.name, "w")
+        output_file.write(self.type + "\n")
+        output_file.write(self.name + "\n")
+        output_file.write(str(self.arm_count) + "\n")
+        output_file.write(str(self.leg_count) + "\n")
+        output_file.write(str(self.ability) + "\n")
+        output_file.write(str(self.xp) + "\n")
+        output_file.close()
+        
+def read(filename: str) -> Creature:
+    input_file = open(filename, "r")
+    lines = input_file.readlines()
+    
+    object_Creature = Creature()
+    object_Creature.type = lines[0]
+    object_Creature.name = lines[1]
+    object_Creature.arm_count = int(lines[2])
+    object_Creature.leg_count = int(lines[3])
+    object_Creature.ability = int(lines[4])
+    object_Creature.xp = int(lines[5])
+    input_file.close()
+    return object_Creature
+        
