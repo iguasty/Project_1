@@ -42,7 +42,7 @@ def main_menu(object_Creature):
                 os.system('cls')
                 try:
                     file = input("Enter file name to open: ")
-                    read(file)
+                    object_Creature = read(file) 
                     print(f"File {file} successfully opened!")
                 except FileNotFoundError:
                     input("File not found!\nPress enter to return to menu.")
