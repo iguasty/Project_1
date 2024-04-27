@@ -34,17 +34,17 @@ def main_menu(object_Creature):
                 os.system('cls') 
                 print(f"XP increased to {object_Creature.upgrade()}!\n")
             case 4:
-                # save creature file
+                # attempts to save creature file
                 os.system('cls')
-                # try:
-                object_Creature.write()
-                print("Saved creature file")
-                input("Press enter to return to menu.\n")
-                # except:
-                    # print("File save failed!\nPress any key and hit enter to return to menu.")
+                try:
+                    object_Creature.write()
+                    print("Saved creature file")
+                    input("Press enter to return to menu.\n")
+                except:
+                    print("File save failed!\nPress enter to return to menu.")
                     
             case 5:
-                # open creature file 
+                # attempts to open creature file 
                 os.system('cls')
                 try:
                     file = input("Enter file name to open: ")
@@ -59,7 +59,7 @@ def main_menu(object_Creature):
                 break    
             case 7:
                 # test mode
-                test_mode(object_Creature) # calls test_mode function
+                test_mode() # calls test_mode function
                             
             case _:
                 # error handling bad input, returns to main menu

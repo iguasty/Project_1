@@ -2,7 +2,9 @@ import os
 from creature import Creature
 from creature import read
 
-def test_mode(object_Creature):
+def test_mode():
+    """function for test menu
+    """
     os.system('cls')
     print("You have entered test mode.")
     while True:
@@ -18,17 +20,19 @@ def test_mode(object_Creature):
                 # open test file
                 os.system('cls')
                 try:
-                    #create new object
+                    # create new object
                     test_creature = Creature()
                     print(f"Creating new creature object\n {test_creature.display_attributes()}")
                 except:
                     print("Creature object creation failed\n")
                     input("Press enter to return to menu.")
                 try:
+                    # attempts to open inputted file
                     file = input("Enter test file to open: ")
                     object_Creature = read(file) 
                     print(f"File {file} successfully opened!")
                     
+                    # checks to see if attribute values are the same
                     if object_Creature.type == str(test_creature.type):
                         print("Type test: PASSED")
                     else:
