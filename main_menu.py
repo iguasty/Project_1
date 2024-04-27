@@ -2,6 +2,7 @@
 import os
 from creature import Creature
 from creature import read
+from test_mode import test_mode
 
 def main_menu(object_Creature):
     """Main menu for program
@@ -10,9 +11,13 @@ def main_menu(object_Creature):
         object_Creature (object): passes Creature object through
     """
     while True:
-
+        select = None # sets value to None so that if a bad input is given for the first try then it raises ValueError
         print( "Main Menu:\n\n1. Display Attributes\n2. Edit Attributes\n3. Upgrade XP Level\n4. Save creature file\n5. Open creature file\n6. Exit\n7. Testing")
-        select = int(input("\nEnter selection -> ")) # user selects menu item
+        try:
+            select = int(input("\nEnter selection -> ")) # user selects menu item
+        except ValueError:
+            os.system('cls')
+            print("Invalid input. Try again.")
 
         # match case for selecting menu item
         match select:
@@ -54,71 +59,7 @@ def main_menu(object_Creature):
                 break    
             case 7:
                 # test mode
-                os.system('cls')
-                print("You have entered test mode.")
-                while True:
-                    print( "Test Menu:\n1. Test File\n2. Test Object Creation\n3. Exit")
-                    test_select = int(input("\nEnter selection -> ")) # user selects menu item
-                    match test_select:
-                        case 1:
-                            # open test file
-                            os.system('cls')
-                            print("Opening test file test_creature")
-                            try:
-                                file = input("Enter test file to open: ")
-                                object_Creature = read(file) 
-                                print(f"File {file} successfully opened!")
-                                
-                                if object_Creature.type == str("type\n"):
-                                    print("Type test: PASSED")
-                                else:
-                                    print("Type test: FAILED")
-                                    
-                                if object_Creature.name == str("name\n"):
-                                    print("Name test: PASSED")
-                                else:
-                                    print("Name test: FAILED")
-                                    
-                                if object_Creature.arm_count == 1000:
-                                    print("Arm count test: PASSED")
-                                else:
-                                    print("Arm count test: FAILED")
-                                    
-                                if object_Creature.leg_count == 1000:
-                                    print("Leg count test: PASSED")
-                                else:
-                                    print("Leg count test: FAILED")
-                                    
-                                if object_Creature.ability == 3:
-                                    print("Ability test: PASSED")
-                                else:
-                                    print("Ability test: FAILED")
-                                
-                                if object_Creature.xp == 1000:
-                                    print("XP test: PASSED")
-                                else:
-                                    print("XP test: FAILED")
-                                    
-                            except FileNotFoundError:
-                                input("File not found!\nPress enter to return to menu.")
-                        case 2:
-                            # test object creation
-                            os.system('cls')
-                            try:
-                                #create new object
-                                test_creature = Creature()
-                                print(f"Creating new creature object\n {test_creature.display_attributes()}")
-                            except:
-                                print("Creature object creation failed\n")
-                                input("Press enter to return to menu.")
-                                
-                        case 3:
-                            os.system('cls')
-                            print("Exiting to main menu.")
-                            break
-                        case _:
-                            os.system('cls')
-                            print("Invalid input. Try again.")
+                test_mode(object_Creature) # calls test_mode function
                             
             case _:
                 # error handling bad input, returns to main menu
