@@ -1,3 +1,6 @@
+# Created by Isaac Guastaferro
+# Last Update 4/27/2024
+
 import os
 from creature import Creature
 from main_menu import main_menu

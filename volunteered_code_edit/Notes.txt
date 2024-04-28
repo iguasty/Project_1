@@ -1,0 +1,12 @@
+    I was able to add a writing function to write the Motherboard class to a file.
+    I was not, however, able to get the program to read that file. 
+    Also it still needs error handling for the fileio.
+
+    It was not super difficult to add the writing function but I was having trouble getting it to read properly 
+    without making large changes to the rest of the code. 
+
+    The only suggestions for this code I would have is to separate the classes into separate files and maybe make the
+    menu into a function also in another file.
+
+    Some tests to run would be importing compatible Motherboard and CPU files and testing to see if they pass as 
+    compatible. Then import incompatible files and see if they do not pass.
